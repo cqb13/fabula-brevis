@@ -4,7 +4,6 @@ export default {
     name: String,
     words: Array,
   },
-  
 };
 </script>
 
@@ -19,9 +18,9 @@ export default {
         </tr>
       </thead>
       <tbody>
-        <tr v-for="word in words" :key="word.latin">
-          <td class="border px-4 py-2"></td>
-          <td class="border px-4 py-2"></td>
+        <tr v-for="word in words" :key="word[1]">
+          <td class="border px-4 py-2">{{ word[0] }}</td>
+          <td class="border px-4 py-2">{{ word[1] }}</td>
         </tr>
       </tbody>
     </table>
