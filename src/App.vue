@@ -1,6 +1,7 @@
 <script>
 import Table from "./components/Table.vue";
 import vocab from "./assets/data/vocab.ts";
+import storySlides from "./assets/data/storySlides.ts";
 
 export default {
   components: {
@@ -9,18 +10,63 @@ export default {
   data() {
     return {
       vocab,
+      storySlides,
+      totalSlides: storySlides.length,
+      currentSlide: 1,
       paused: false,
     };
+  },
+  mounted() {
+    setInterval(() => {
+      if (!this.paused) {
+        this.increaseSlide();
+      }
+    }, 10000);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        this.increaseSlide();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        this.decreaseSlide();
+      } else if (e.key === " ") {
+        e.preventDefault();
+        this.togglePause();
+      }
+    });
   },
   methods: {
     togglePause() {
       this.paused = !this.paused;
     },
+    increaseSlide() {
+      if (this.currentSlide < this.totalSlides) {
+        this.currentSlide++;
+      } else {
+        this.currentSlide = 1;
+      }
+    },
+    decreaseSlide() {
+      if (this.currentSlide > 1) {
+        this.currentSlide--;
+      } else {
+        this.currentSlide = this.totalSlides;
+      }
+    },
   },
   computed: {
     imgSrc() {
       return this.paused ? "/src/assets/images/play.svg" : "/src/assets/images/pause.svg";
-    }
+    },
+    storyImgSrc() {
+      return this.storySlides[this.currentSlide - 1].image;
+    },
+    slideName() {
+      return this.storySlides[this.currentSlide - 1].name;
+    },
+    slideDescription() {
+      return this.storySlides[this.currentSlide - 1].description;
+    },
   },
 };
 </script>
@@ -45,31 +91,27 @@ export default {
     <main class="mt-10 flex min-h-screen flex-col items-center">
       <section class="flex h-screen w-screen justify-between gap-5 py-10" id="images">
         <article
-          class="my-5 flex w-3/5 flex-col items-start rounded-r-3xl bg-primary bg-opacity-40 p-20"
+          class="my-5 flex w-3/5 flex-col rounded-r-3xl bg-primary bg-opacity-40 p-20 justify-between"
         >
-          <h2 class="text-4xl">Naves</h2>
-          <p class="text-2xl">
-            Naves sunt vehicula quae in aqua natant. Naves sunt magna et parva.
-            Naves sunt longae et breves. Naves sunt albae et nigrae. Naves sunt
-            pulchrae et turpes. Naves sunt in mari et in flumine. Naves sunt in
-            portu et in via. Naves sunt in aqua et in terra. Naves sunt in portu
-            et in via. Naves sunt in aqua et in terra. Naves sunt in portu et in
-            via. Naves sunt in aqua et in terra. Naves sunt in portu et in via.
-            Naves sunt in aqua et in terra. Naves sunt in portu et in via. Naves
-            sunt in aqua et in terra. Naves sunt in portu et in via. Naves sunt
-            in aqua et in terra. Naves sunt in portu et in via. Naves sunt in
-            aqua et in terra. Naves sunt in portu et in via. Naves sunt in aqua
-            et in terra. Naves sunt in portu et in via. Naves sunt in aqua et in
-            terra.
-          </p>
-          <section class="flex gap-5 bg-primary bg-opacity-40 p-2 rounded-lg self-end justify-self-end">
-            <img src="./assets/images/arrow.svg" alt="arrow-left" class=" rotate-180 cursor-pointer">
-            <img :src="imgSrc" alt="paused control" @click="togglePause" class="cursor-pointer">
-            <img src="./assets/images/arrow.svg" alt="arrow-right" class="cursor-pointer">
-          </section>
+          <div>
+            <h2 class="text-4xl">{{ slideName }}</h2>
+            <p class="text-2xl">
+              {{ slideDescription }}
+            </p>
+          </div>
+          <div class="flex w-full justify-between">
+            <section class="flex gap-5 bg-primary bg-opacity-40 p-2 rounded-lg items-center">
+              <p>{{ currentSlide }} / {{ totalSlides }}</p>
+            </section>
+            <section class="flex gap-5 bg-primary bg-opacity-40 p-2 rounded-lg">
+              <img src="./assets/images/arrow.svg" alt="arrow-left" class=" rotate-180 cursor-pointer" @click="decreaseSlide">
+              <img :src="imgSrc" alt="paused control" @click="togglePause" class="cursor-pointer">
+              <img src="./assets/images/arrow.svg" alt="arrow-right" class="cursor-pointer" @click="increaseSlide">
+            </section>
+          </div>
         </article>
         <img
-          src="./assets/images/story/img-1.jpg"
+          :src="storyImgSrc"
           alt="img"
           class="h-5/12 w-5/12 rounded-l-3xl"
         />
