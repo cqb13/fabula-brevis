@@ -56,7 +56,7 @@ export default {
   },
   computed: {
     imgSrc() {
-      return this.paused ? "/src/assets/images/play.svg" : "/src/assets/images/pause.svg";
+      return this.paused ? "./assets/images/play.svg" : "./assets/images/pause.svg";
     },
     storyImgSrc() {
       return this.storySlides[this.currentSlide - 1].image;
