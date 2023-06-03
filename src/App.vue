@@ -69,8 +69,8 @@ export default {
           </section>
         </article>
         <img
-          src="./assets/images/monster-finds-ship.jpg"
-          alt="boat"
+          src="./assets/images/story/img-1.jpg"
+          alt="img"
           class="h-5/12 w-5/12 rounded-l-3xl"
         />
       </section>
