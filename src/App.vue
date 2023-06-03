@@ -37,7 +37,7 @@ export default {
         <img
           src="./assets/images/dragon.svg"
           alt="dragon"
-          class="h-5/12 w-5/12"
+          class="h-5/12 w-5/12 opacity-90"
         />
         <article
           class="my-5 flex w-3/5 flex-col items-start rounded-l-3xl bg-primary bg-opacity-40 p-20"
