@@ -83,9 +83,6 @@ export default {
           >Learn More</a
         >
       </div>
-      <div class="absolute bottom-0 right-0 p-3">
-        <p>By: Maksim Straus, David Mitkov, & Eddie Kim</p>
-      </div>
     </header>
     <div class="p-20"></div>
     <main class="mt-10 flex min-h-screen flex-col items-center">
