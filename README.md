@@ -1,18 +1,73 @@
-# Vue 3 + TypeScript + Vite
+<div align="center">
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Fabula Brevis
 
-## Recommended IDE Setup
+[View Website](https://fabula-brevis.vercel.app/)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+</div>
 
-## Type Support For `.vue` Imports in TS
+## About:
+A detailed visual analysis of Scylla's encounter with Odysseus.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Technologies:
+- Vue
+- Vite
+- TypeScript
+- Tailwind CSS
+- Vercel
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Structure:
+```
+fabula-brevis
+└── tsconfig.node.json
+└── tsconfig.json
+└── tailwind.config.cjs
+└── README.md
+└── postcss.config.cjs
+└── package.json
+└── package-lock.json
+└── index.html
+└── .prettierrc
+└── .prettierignore
+└── .gitignore
+├── public
+│   └── play.svg
+│   └── pause.svg
+│   └── boat.svg
+│   └── story
+│       └── img-8.png
+│       └── img-7.png
+│       └── img-6.png
+│       └── img-5.png
+│       └── img-4.png
+│       └── img-3.png
+│       └── img-2.png
+│       └── img-15.png
+│       └── img-14.png
+│       └── img-13.png
+│       └── img-12.png
+│       └── img-11.png
+│       └── img-10.png
+│       └── img-1.png
+│       └── img-9.png
+├── src
+│   └── style.css
+│   └── main.ts
+│   └── App.vue
+│   ├── assets
+│   │   ├── data
+│   │   │   └── storySlides.ts
+│   │   │   └── vocab.ts
+│   │   ├── images
+│   │   │   └── dragon.svg
+│   │   │   └── boat.svg
+│   │   │   └── arrow.svg
+│   │   │   └── github.svg
+│   │   └── types
+│   │       └── storySlide.ts
+│   │       └── vocab.ts
+│   ├── components
+│   │   └── Table.vue
+│   └── vite-env.d.ts
+└── vite.config.ts
+```
