@@ -86,9 +86,12 @@ export default {
     </header>
     <div class="p-20"></div>
     <main class="mt-10 flex min-h-screen flex-col items-center">
-      <section class="flex h-screen w-screen justify-between gap-5 py-10" id="images">
+      <section
+        class="flex h-screen w-screen justify-between gap-5 py-10"
+        id="images"
+      >
         <article
-          class="my-5 flex w-3/5 flex-col rounded-r-3xl bg-primary bg-opacity-40 p-20 justify-between"
+          class="my-5 flex w-3/5 flex-col justify-between rounded-r-3xl bg-primary bg-opacity-40 p-20"
         >
           <div>
             <h2 class="text-4xl">{{ slideName }}</h2>
@@ -97,21 +100,34 @@ export default {
             </p>
           </div>
           <div class="flex w-full justify-between">
-            <section class="flex gap-5 bg-primary bg-opacity-40 p-2 rounded-lg items-center">
+            <section
+              class="flex items-center gap-5 rounded-lg bg-primary bg-opacity-40 p-2"
+            >
               <p>{{ currentSlide }} / {{ totalSlides }}</p>
             </section>
-            <section class="flex gap-5 bg-primary bg-opacity-40 p-2 rounded-lg">
-              <img src="./assets/images/arrow.svg" alt="arrow-left" class=" rotate-180 cursor-pointer" @click="decreaseSlide">
-              <img :src="imgSrc" alt="paused control" @click="togglePause" class="cursor-pointer">
-              <img src="./assets/images/arrow.svg" alt="arrow-right" class="cursor-pointer" @click="increaseSlide">
+            <section class="flex gap-5 rounded-lg bg-primary bg-opacity-40 p-2">
+              <img
+                src="./assets/images/arrow.svg"
+                alt="arrow-left"
+                class="rotate-180 cursor-pointer"
+                @click="decreaseSlide"
+              />
+              <img
+                :src="imgSrc"
+                alt="paused control"
+                @click="togglePause"
+                class="cursor-pointer"
+              />
+              <img
+                src="./assets/images/arrow.svg"
+                alt="arrow-right"
+                class="cursor-pointer"
+                @click="increaseSlide"
+              />
             </section>
           </div>
         </article>
-        <img
-          :src="storyImgSrc"
-          alt="img"
-          class="h-5/12 w-5/12 rounded-l-3xl"
-        />
+        <img :src="storyImgSrc" alt="img" class="h-5/12 w-5/12 rounded-l-3xl" />
       </section>
       <div class="p-20"></div>
       <section class="mt-10 flex w-screen justify-between">
@@ -121,25 +137,28 @@ export default {
           class="h-5/12 w-5/12 opacity-90"
         />
         <article
-          class="my-5 flex w-3/5 flex-col items-start rounded-l-3xl bg-primary bg-opacity-40 p-20"
+          class="my-5 w-3/5 rounded-l-3xl bg-primary bg-opacity-40 p-20 pr-5"
         >
-          <div
-            v-for="item in this.vocab"
-            :key="item.name"
-            class="flex justify-center"
-          >
-            <Table
-              v-if="item.words.length > 0"
-              :name="item.name"
-              :words="item.words"
-            />
-          </div>
+          <h2 class="text-4xl text-center mb-5">Vocab</h2>
+          <section class="grid grid-cols-2 gap-5">
+            <div
+              v-for="item in vocab"
+              :key="item.name"
+              class="flex flex-col items-center bg-primary bg-opacity-40 rounded-lg p-2"
+            >
+              <Table
+                v-if="item.words.length > 0"
+                :name="item.name"
+                :words="item.words"
+              />
+            </div>
+          </section>
         </article>
       </section>
     </main>
     <footer className="flex justify-between align-middle text-lg px-4 pb-2">
       <p>Fabula Brevis | By: cqb13</p>
-      <a href="https://github.com/cqb13" target="_blank">
+      <a href="https://github.com/cqb13/fabula-brevis" target="_blank">
         <img
           src="./assets/images/github.svg"
           alt="Github Logo"

@@ -4,36 +4,54 @@ const vocab: vocabList[] = [
   {
     name: "Nomina (nouns)",
     words: [
-        ["aqua, aquae", "water"],
-        ["spelunca, speluncae", "cave"],
-        ["nauta, nautae", "sailor"],
+      ["cauda, caudae", "tail"],
+      ["homo, hominis", "human"],
+      ["monstrum, monstri", "monster"],
+      ["nauta, nautae", "sailor"],
+      ["navis, navis", "ship"],
+      ["nympha, nymphae", "nymph"],
+      ["omnis, omnis", "all persons"]
     ]
   },
   {
     name: "Verba (verbs)",
     words: [
-        ["possum, posse, potui", "to be able"],
-        ["edo, edere, edi, esus", "to eat"],
-        ["eo, ire, ivi, itus", "to go"],
-        ["nolo, nolle, nolui", "to not want"],
-        ["oleo, olere, olui", "to smell"],
+      ["capio, capere, cepi, captus", "to capture"],
+      ["clamo, clamare, clamavi, clamatus", "to shout"],
+      ["debeo, debere, debui, debitus", "to ought"],
+      ["eo, ire, ivi, itus", "to go"],
+      ["iro, irare, iravi, iratus", "to be angry"],
+      ["moveo, movere, movi, motus", "to move"],
+      ["possum, posse, potui", "to be able"],
+      ["navigo, navigare, navigavi, navigatus", "to sail"]
     ],
   },
   {
     name: "Adiectiva (adjectives)",
-    words: [],
+    words: [
+      ["meus, mea, meum", "my"],
+      ["terribilis, terribilis, terribile", "frightful"]
+    ],
   },
   {
     name: "Adverbia (adverbs)",
-    words: [],
+    words: [
+      ["celeriter, celerius, celerrime", "quickly"],
+      ["longus, longa, longum", "long"]
+    ],
   },
   {
     name: "Coniunctiones (conjunctions)",
-    words: [],
+    words: [
+      ["paene", "almost"]
+    ],
   },
   {
     name: "Praepositiones (prepositions)",
-    words: [],
+    words: [
+      ["ad", "towards"],
+      ["cum", "with"]
+    ],
   },
 ];
 

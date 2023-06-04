@@ -8,13 +8,13 @@ export default {
 </script>
 
 <template>
-  <section>
+  <section class="flex flex-col items-center">
     <h3 class="text-2xl text-center">{{ name }}</h3>
     <table class="table-auto">
       <thead>
         <tr>
           <th class="px-4 py-2">Partes Principales</th>
-          <th class="px-4 py-2">Sensus Anglicus</th>
+          <th class="px-4 py-2">Sensus</th>
         </tr>
       </thead>
       <tbody>
