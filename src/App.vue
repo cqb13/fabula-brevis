@@ -73,8 +73,8 @@ export default {
 
 <template>
   <div class="min-h-screen bg-gray-800 bg-boat bg-top bg-no-repeat text-white">
-    <header class="h-screen">
-      <div class="w-fit p-10">
+    <header class="h-screen max-lg:flex max-lg:flex-col-reverse">
+      <div class="w-fit p-10 ">
         <h1 class="text-6xl">Fabula Brevis</h1>
         <h2 class="text-4xl">Pars Quinta - Naves</h2>
         <a
@@ -87,11 +87,11 @@ export default {
     <div class="p-20"></div>
     <main class="mt-10 flex min-h-screen flex-col items-center">
       <section
-        class="flex h-screen w-screen justify-between gap-5 py-10"
+        class="flex max-lg:flex-col max-lg:items-start h-screen w-screen justify-between gap-5 py-10"
         id="images"
       >
         <article
-          class="my-5 flex w-3/5 flex-col justify-between rounded-r-3xl bg-primary bg-opacity-40 p-20"
+          class="my-5 flex w-3/5 flex-col justify-between rounded-r-3xl bg-primary bg-opacity-40 p-20 max-lg:w-10/12 max-lg:p-5"
         >
           <div>
             <h2 class="text-4xl">{{ slideName }}</h2>
@@ -127,20 +127,21 @@ export default {
             </section>
           </div>
         </article>
-        <img :src="storyImgSrc" alt="img" class="h-5/12 w-5/12 rounded-l-3xl" />
+        <img :src="storyImgSrc" alt="img" class="h-5/12 w-5/12 rounded-l-3xl max-lg:rounded-3xl self-center max-lg:w-7/12 max-lg:h-7/12 max-sm:w-10/12 max-sm:h-10/12" />
       </section>
-      <div class="p-20"></div>
-      <section class="mt-10 flex w-screen justify-between">
+      <div class="p-20">
+      </div>
+      <section class="mt-10 flex w-screen justify-between max-lg:justify-center">
         <img
           src="./assets/images/dragon.svg"
           alt="dragon"
-          class="h-5/12 w-5/12 opacity-90"
+          class="h-5/12 w-5/12 opacity-90 max-lg:hidden"
         />
         <article
-          class="my-5 w-3/5 rounded-l-3xl bg-primary bg-opacity-40 p-20 pr-5"
+          class="my-5 w-3/5 rounded-l-3xl bg-primary bg-opacity-40 p-20 pr-5 max-lg:w-11/12 max-lg:rounded-3xl max-lg:p-5"
         >
-          <h2 class="text-4xl text-center mb-5">Vocab</h2>
-          <section class="grid grid-cols-2 gap-5">
+          <h2 class="text-4xl mb-5 text-center">Vocab</h2>
+          <section class="grid grid-cols-2 gap-5 max-xs:grid-cols-1">
             <div
               v-for="item in vocab"
               :key="item.name"
