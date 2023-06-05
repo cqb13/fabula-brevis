@@ -4,13 +4,12 @@ const vocab: vocabList[] = [
   {
     name: "Nomina (nouns)",
     words: [
-      ["cauda, caudae", "tail"],
-      ["homo, hominis", "human"],
-      ["monstrum, monstri", "monster"],
-      ["nauta, nautae", "sailor"],
-      ["navis, navis", "ship"],
-      ["nympha, nymphae", "nymph"],
-      ["omnis, omnis", "all persons"]
+      ["cauda, caudae f", "tail"],
+      ["homo, hominis m", "human"],
+      ["monstrum, monstri n", "monster"],
+      ["nauta, nautae f", "sailor"],
+      ["navis, navis f", "ship"],
+      ["nympha, nymphae f", "nymph"]
     ]
   },
   {
@@ -30,7 +29,8 @@ const vocab: vocabList[] = [
     name: "Adiectiva (adjectives)",
     words: [
       ["meus, mea, meum", "my"],
-      ["terribilis, terribilis, terribile", "frightful"]
+      ["terribilis, terribilis, terribile", "frightful"],
+      ["omnis, omnis, omne", "all"]
     ],
   },
   {
